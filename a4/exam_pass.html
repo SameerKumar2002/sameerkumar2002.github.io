@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Exam Result</h1>
+
+    <form  name="myform">
+
+    <label for="a">Turbo C</label>
+    <input type="number" name="turbo" id="a" placeholder="Enter Turbo C Mark"><br>
+
+    <label for="b">Java</label>
+    <input type="number" name="java" id="b"  placeholder="Enter Java Mark"><br>
+
+    <label for="c">JavaScript</label>
+    <input type="number" name="javaScript" id="c"  placeholder="Enter JavaScript Mark"><br>
+
+    <button type="button" onclick="result()">Result</button>
+</form>
+    <script>
+        function result(){
+
+            let message = "This Studend has D in ";
+            let Not_error = false;
+            let c = document.myform.turbo.value;
+            console.log(c);
+            let java = document.myform.java.value;
+            console.log(java);
+            let js = document.myform.javaScript.value;
+            console.log(js);
+
+            if(c >= 50 && java >= 50 && js>= 50){
+                  document.write('<h1>This Student is Passed.</h1>');
+
+                  if(c > 80){
+                      message=message.concat("Turbo C, ");
+                      Not_error = true;
+                  }
+
+                  if(java > 80){
+                    message=message.concat("Java, ");
+                    Not_error = true;
+                  }
+
+                  if(js > 80){
+                    message = message.concat("JavaScript, ");
+                    Not_error = true;
+                  }
+
+                  message = message.substring(message.length-2,-1);
+
+                  if(Not_error){
+                    document.write(message.concat('.'));
+                 }
+
+            }else{
+                document.write('<h1>This Student is Failed.</h1>');
+            }
+        }
+    
+    </script>
+    
+</body>
+</html>
